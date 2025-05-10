@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdel Design Studio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FFFFFF',secondary:'#00D9FF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<link rel="icon" href="imagens/B. LOGO.png" type="image/png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #121212;
+color: #f5f5f5;
+}
+.hero-title {
+font-weight: 800;
+letter-spacing: -1px;
+}
+.nav-link {
+position: relative;
+overflow: hidden;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background-color: #00D9FF;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.service-card {
+transition: all 0.3s ease;
+background: linear-gradient(145deg, #1a1a1a, #232323);
+border: 1px solid #2a2a2a;
+}
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(0, 217, 255, 0.15);
+border-color: rgba(0, 217, 255, 0.3);
+}
+.btn-primary {
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease;
+background: linear-gradient(90deg, #00D9FF, #00A3FF);
+}
+.btn-primary::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+transition: left 0.7s ease;
+}
+.btn-primary:hover::before {
+left: 100%;
+}
+.social-icon {
+transition: all 0.3s ease;
+}
+.social-icon:hover {
+transform: translateY(-5px);
+}
+.header-container {
+background-color: rgba(18, 18, 18, 0.8);
+backdrop-filter: blur(10px);
+transition: all 0.3s ease;
+}
+.form-input {
+background-color: #1a1a1a;
+border: 1px solid #333;
+transition: all 0.3s ease;
+}
+.form-input:focus {
+border-color: #00D9FF;
+box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.2);
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+</style>
+</head>
+<body class="min-h-screen">
+<!-- Header -->
+<header class="header-container fixed w-full top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="flex items-center gap-2">
+<img src="https://static.readdy.ai/image/183af5beaeb738335abbc0d055520758/98e742ba776e29f25e301c6825b4a33e.png" alt="Abdel Design Studio" class="h-12 w-auto">
+<span class="font-['Pacifico'] text-2xl text-white">Abdel Design Studio</span>
+</a>
+<nav class="hidden md:flex space-x-6">
+<a href="#home" class="nav-link text-gray-300 hover:text-white">Início</a>
+<a href="#services" class="nav-link text-gray-300 hover:text-white">Serviços</a>
+<a href="#portfolio" class="nav-link text-gray-300 hover:text-white">Portfólio</a>
+<a href="#about" class="nav-link text-gray-300 hover:text-white">Sobre</a>
+<a href="#contact" class="nav-link text-gray-300 hover:text-white">Contato</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header>
+<!-- Mobile Menu -->
+<div class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex-col justify-center items-center">
+<button class="absolute top-4 right-4 text-white w-10 h-10 flex items-center justify-center">
+<i class="ri-close-line ri-2x"></i>
+</button>
+<nav class="flex flex-col space-y-6 text-center">
+<a href="#home" class="text-2xl text-white py-2">Início</a>
+<a href="#services" class="text-2xl text-white py-2">Serviços</a>
+<a href="#portfolio" class="text-2xl text-white py-2">Portfólio</a>
+<a href="#about" class="text-2xl text-white py-2">Sobre</a>
+<a href="#contact" class="text-2xl text-white py-2">Contato</a>
+</nav>
+</div>
+<!-- Hero Section -->
+<section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+<div class="container mx-auto px-4">
+<div class="flex flex-col items-center text-center">
+<h1 class="hero-title text-4xl md:text-6xl lg:text-7xl mb-6 animate-fade-in">
+DESIGN QUE <br><span class="text-secondary">TRANSFORMA</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 animate-fade-in delay-100">
+Criamos soluções visuais impactantes que elevam sua marca e conectam você ao seu público.
+</p>
+<button id="requestServiceBtn" class="btn-primary text-white font-semibold py-4 px-8 !rounded-button animate-fade-in delay-200 cursor-pointer">
+Solicitar Serviço
+</button>
+<div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+<div class="bg-[#1a1a1a] rounded-lg w-[90%] max-w-md p-6 relative">
+<button id="closeServiceModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h3 class="text-2xl font-bold mb-6">Escolha um Serviço</h3>
+<div class="space-y-4">
+<button class="service-option w-full text-left p-4 rounded-lg bg-[#232323] hover:bg-[#2a2a2a] transition-colors flex items-center justify-between group" data-service="Criação de Site">
+<div>
+<span class="block font-semibold">Criação de Site</span>
+<span class="text-sm text-gray-400">20.000 kz</span>
+</div>
+<i class="ri-arrow-right-line text-secondary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+</button>
+<button class="service-option w-full text-left p-4 rounded-lg bg-[#232323] hover:bg-[#2a2a2a] transition-colors flex items-center justify-between group" data-service="Flyer">
+<div>
+<span class="block font-semibold">Flyer</span>
+<span class="text-sm text-gray-400">4.000 kz</span>
+</div>
+<i class="ri-arrow-right-line text-secondary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+</button>
+<button class="service-option w-full text-left p-4 rounded-lg bg-[#232323] hover:bg-[#2a2a2a] transition-colors flex items-center justify-between group" data-service="Edição de Vídeos">
+<div>
+<span class="block font-semibold">Edição de Vídeos</span>
+<span class="text-sm text-gray-400">7.000 kz</span>
+</div>
+<i class="ri-arrow-right-line text-secondary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+</button>
+<button class="service-option w-full text-left p-4 rounded-lg bg-[#232323] hover:bg-[#2a2a2a] transition-colors flex items-center justify-between group" data-service="Filmagens">
+<div>
+<span class="block font-semibold">Filmagens</span>
+<span class="text-sm text-gray-400">A partir de 40.000 kz</span>
+</div>
+<i class="ri-arrow-right-line text-secondary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+</button>
+</div>
+</div>
+</div>
+<div id="formModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+<div class="bg-[#1a1a1a] rounded-lg w-[90%] max-w-md p-6 relative">
+<button id="closeFormModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<h3 class="text-2xl font-bold mb-6">Solicitar Serviço</h3>
+<form id="serviceRequestForm" class="space-y-4">
+<input type="hidden" id="selectedService" name="service">
+<div>
+<label for="requestName" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+<input type="text" id="requestName" name="name" class="form-input w-full px-4 py-3 rounded-lg text-white bg-[#232323] border-none" required>
+</div>
+<div>
+<label for="requestEmail" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+<input type="email" id="requestEmail" name="email" class="form-input w-full px-4 py-3 rounded-lg text-white bg-[#232323] border-none" required>
+</div>
+<div>
+<label for="requestMessage" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
+<textarea id="requestMessage" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-lg text-white bg-[#232323] border-none" required></textarea>
+</div>
+<button type="submit" class="btn-primary w-full py-4 px-6 !rounded-button text-white font-semibold">
+Enviar Solicitação
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-16 bg-[#161616]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold mb-4">Nossos Serviços</h2>
+<p class="text-gray-300 max-w-2xl mx-auto">Soluções criativas personalizadas para atender às suas necessidades de design e comunicação visual.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service 1 -->
+<div class="service-card p-6 rounded-lg animate-fade-in delay-100">
+<div class="w-16 h-16 flex items-center justify-center mb-4 bg-[#1e1e1e] rounded-full mx-auto">
+<i class="ri-code-line ri-xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Criação de Site</h3>
+<p class="text-center text-secondary font-semibold mb-3">20.000 kz</p>
+<p class="text-gray-300 text-center mb-6 text-sm">Sites profissionais, responsivos e otimizados para todos os dispositivos.</p>
+<a href="https://wa.me/244944230503?text=Olá! Tenho interesse no serviço de Criação de Site." class="btn-primary block text-center py-3 px-4 !rounded-button text-white font-semibold cursor-pointer">
+Solicitar
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card p-6 rounded-lg animate-fade-in delay-200">
+<div class="w-16 h-16 flex items-center justify-center mb-4 bg-[#1e1e1e] rounded-full mx-auto">
+<i class="ri-file-paper-2-line ri-xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Flyer</h3>
+<p class="text-center text-secondary font-semibold mb-3">4.000 kz</p>
+<p class="text-gray-300 text-center mb-6 text-sm">Design de flyers impactantes para promover seu negócio ou evento.</p>
+<a href="https://wa.me/244944230503?text=Olá! Tenho interesse no serviço de Design de Flyer." class="btn-primary block text-center py-3 px-4 !rounded-button text-white font-semibold cursor-pointer">
+Solicitar
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card p-6 rounded-lg animate-fade-in delay-300">
+<div class="w-16 h-16 flex items-center justify-center mb-4 bg-[#1e1e1e] rounded-full mx-auto">
+<i class="ri-movie-line ri-xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Edição de Vídeos</h3>
+<p class="text-center text-secondary font-semibold mb-3">7.000 kz</p>
+<p class="text-gray-300 text-center mb-6 text-sm">Edição profissional para conteúdo digital, comercial ou pessoal.</p>
+<a href="https://wa.me/244944230503?text=Olá! Tenho interesse no serviço de Edição de Vídeos." class="btn-primary block text-center py-3 px-4 !rounded-button text-white font-semibold cursor-pointer">
+Solicitar
+</a>
+</div>
+<!-- Service 4 -->
+<div class="service-card p-6 rounded-lg animate-fade-in delay-400">
+<div class="w-16 h-16 flex items-center justify-center mb-4 bg-[#1e1e1e] rounded-full mx-auto">
+<i class="ri-camera-line ri-xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Filmagens</h3>
+<p class="text-center text-secondary font-semibold mb-3">A partir de 40.000 kz</p>
+<p class="text-gray-300 text-center mb-6 text-sm">Captura de vídeos profissionais para eventos, publicidade e mais.</p>
+<a href="https://wa.me/244944230503?text=Olá! Tenho interesse no serviço de Filmagens." class="btn-primary block text-center py-3 px-4 !rounded-button text-white font-semibold cursor-pointer">
+Solicitar
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold mb-4">Nosso Portfólio</h2>
+<p class="text-gray-300 max-w-2xl mx-auto">Conheça alguns dos nossos trabalhos recentes e veja como podemos transformar sua visão em realidade.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Portfolio Item 1 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=modern%20website%20design%20mockup%20on%20dark%20background%2C%20professional%20portfolio%20website%2C%20clean%20interface%2C%20high%20quality%203D%20render%2C%20dark%20mode%20UI%20design%2C%20web%20design%20showcase%2C%20digital%20creative%20studio%20website&width=375&height=250&seq=1&orientation=landscape" alt="Design de Website" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Website Corporativo</h3>
+<p class="text-gray-300 text-sm">Design e desenvolvimento de site responsivo para empresa de tecnologia.</p>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in delay-100 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=professional%20flyer%20design%20mockup%2C%20marketing%20material%2C%20dark%20background%2C%20vibrant%20colors%2C%20creative%20advertising%2C%20print%20design%2C%20graphic%20design%20sample%2C%20high%20quality%203D%20render&width=375&height=250&seq=2&orientation=landscape" alt="Design de Flyer" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Campanha Promocional</h3>
+<p class="text-gray-300 text-sm">Série de flyers para evento cultural com identidade visual consistente.</p>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in delay-200 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=video%20editing%20workspace%2C%20professional%20video%20production%2C%20dark%20studio%20environment%2C%20timeline%20editing%20software%2C%20color%20grading%2C%20post-production%2C%20cinematic%20look%2C%20high%20quality%203D%20render&width=375&height=250&seq=3&orientation=landscape" alt="Edição de Vídeo" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Vídeo Institucional</h3>
+<p class="text-gray-300 text-sm">Produção e edição de vídeo para apresentação corporativa.</p>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in delay-300 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=professional%20filming%20setup%2C%20camera%20equipment%2C%20dark%20studio%2C%20cinematography%2C%20film%20production%2C%20behind%20the%20scenes%2C%20high-end%20video%20production%2C%20high%20quality%203D%20render&width=375&height=250&seq=4&orientation=landscape" alt="Filmagem Profissional" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Cobertura de Evento</h3>
+<p class="text-gray-300 text-sm">Filmagem completa de conferência empresarial com múltiplas câmeras.</p>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in delay-400 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=social%20media%20content%20creation%2C%20instagram%20post%20designs%2C%20facebook%20marketing%20materials%2C%20dark%20themed%20social%20media%20templates%2C%20digital%20marketing%20visuals%2C%20high%20quality%203D%20render&width=375&height=250&seq=5&orientation=landscape" alt="Social Media" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Conteúdo para Redes Sociais</h3>
+<p class="text-gray-300 text-sm">Criação de templates e posts para campanha digital de marca de moda.</p>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="overflow-hidden rounded-lg bg-[#1a1a1a] animate-fade-in delay-400 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+<img src="https://readdy.ai/api/search-image?query=brand%20identity%20design%2C%20logo%20design%20presentation%2C%20corporate%20branding%2C%20visual%20identity%20system%2C%20dark%20background%2C%20professional%20design%20showcase%2C%20high%20quality%203D%20render&width=375&height=250&seq=6&orientation=landscape" alt="Identidade Visual" class="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-110">
+<div class="p-4 transform transition-all duration-500">
+<h3 class="text-lg font-bold mb-2 text-white hover:text-secondary transition-colors duration-300">Identidade Visual</h3>
+<p class="text-gray-300 text-sm">Desenvolvimento completo de marca para startup tecnológica.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 bg-[#161616]">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 animate-fade-in">
+<img src="imagens/B. LOGO.png" alt="Abdel Design Studio" class="w-full h-auto rounded-lg">
+</div>
+<div class="md:w-1/2 animate-fade-in delay-100">
+<h2 class="text-3xl md:text-5xl font-bold mb-6">Sobre o Abdel Design Studio</h2>
+<p class="text-gray-300 mb-4">
+Somos um estúdio criativo especializado em transformar ideias em experiências visuais impactantes. Nossa missão é ajudar marcas e empresas a se destacarem através de um design inovador e estratégico.
+</p>
+<p class="text-gray-300 mb-6">
+Com anos de experiência no mercado, nossa equipe combina conhecimento técnico e criatividade para entregar soluções personalizadas que atendam às necessidades específicas de cada cliente.
+</p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-[#1a1a1a] p-4 rounded-lg">
+<div class="text-secondary text-2xl font-bold">5+</div>
+<div class="text-sm text-gray-300">Anos de experiência</div>
+</div>
+<div class="bg-[#1a1a1a] p-4 rounded-lg">
+<div class="text-secondary text-2xl font-bold">100+</div>
+<div class="text-sm text-gray-300">Projetos concluídos</div>
+</div>
+<div class="bg-[#1a1a1a] p-4 rounded-lg">
+<div class="text-secondary text-2xl font-bold">50+</div>
+<div class="text-sm text-gray-300">Clientes satisfeitos</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold mb-4">Entre em Contato</h2>
+<p class="text-gray-300 max-w-2xl mx-auto">Vamos transformar sua ideia em realidade. Preencha o formulário abaixo e iniciaremos seu projeto.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2 animate-fade-in">
+<form id="contactForm" class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+<input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-lg text-white" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+<input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-lg text-white" required>
+</div>
+<div>
+<label for="service" class="block text-sm font-medium text-gray-300 mb-1">Serviço</label>
+<div class="relative">
+<select id="service" name="service" class="form-input w-full px-4 py-3 rounded-lg appearance-none text-white pr-10" required>
+<option value="">Selecione um serviço</option>
+<option value="Criação de Site">Criação de Site</option>
+<option value="Flyer">Flyer</option>
+<option value="Edição de Vídeos">Edição de Vídeos</option>
+<option value="Filmagens">Filmagens</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
+<textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-lg text-white" required></textarea>
+</div>
+<button type="submit" class="btn-primary w-full py-4 px-6 !rounded-button text-white font-semibold cursor-pointer">
+Enviar Mensagem
+</button>
+</form>
+</div>
+<div class="md:w-1/2 animate-fade-in delay-100">
+<div class="bg-[#1a1a1a] p-8 rounded-lg h-full">
+<h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-[#232323] rounded-full flex-shrink-0">
+<i class="ri-phone-line text-secondary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Telefone</h4>
+<p class="text-gray-300">(244) 944 230 503</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-[#232323] rounded-full flex-shrink-0">
+<i class="ri-mail-line text-secondary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Email</h4>
+<p class="text-gray-300">abdeldesigns.studio@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-[#232323] rounded-full flex-shrink-0">
+<i class="ri-time-line text-secondary"></i>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Horário de Atendimento</h4>
+<p class="text-gray-300">Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4">Redes Sociais</h4>
+<div class="flex space-x-4">
+<a href="https://www.instagram.com/abdeldesign.studio/" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-[#232323] rounded-full cursor-pointer">
+<i class="ri-instagram-line text-secondary ri-lg"></i>
+</a>
+<a href="https://www.facebook.com/abdel_designer360/" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-[#232323] rounded-full cursor-pointer">
+<i class="ri-facebook-fill text-secondary ri-lg"></i>
+</a>
+<a href="https://wa.me/244944230503" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-[#232323] rounded-full cursor-pointer">
+<i class="ri-whatsapp-line text-secondary ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0a0a0a] py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+<div>
+<a href="#" class="font-['Pacifico'] text-2xl text-white block mb-4">Abdel Design Studio</a>
+<p class="text-gray-400 mb-6">Transformando ideias em experiências visuais impactantes desde 2020.</p>
+<div class="flex space-x-4">
+<a href="https://www.instagram.com/abdeldesign.studio/" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center bg-[#1a1a1a] rounded-full cursor-pointer">
+<i class="ri-instagram-line text-gray-300"></i>
+</a>
+<a href="https://www.facebook.com/abdel_designer360/" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center bg-[#1a1a1a] rounded-full cursor-pointer">
+<i class="ri-facebook-fill text-gray-300"></i>
+</a>
+<a href="https://wa.me/244944230503" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center bg-[#1a1a1a] rounded-full cursor-pointer">
+<i class="ri-whatsapp-line text-gray-300"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-secondary">Início</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-secondary">Serviços</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-secondary">Portfólio</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-secondary">Sobre</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-secondary">Contato</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contato</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<i class="ri-phone-line text-secondary mt-1"></i>
+<span class="text-gray-400">(244) 944 230 503</span>
+</li>
+<li class="flex items-start gap-3">
+<i class="ri-mail-line text-secondary mt-1"></i>
+<span class="text-gray-400">abdeldesigns.studio@gmail.com</span>
+</li>
+<li class="flex items-start gap-3">
+<i class="ri-map-pin-line text-secondary mt-1"></i>
+<span class="text-gray-400">Luanda, Angola</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-[#333] text-center">
+<p class="text-gray-500">© 2025 Abdel Designer. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Header scroll effect
+const header = document.querySelector('.header-container');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+} else {
+header.style.backgroundColor = 'rgba(18, 18, 18, 0.8)';
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.querySelector('.fixed.inset-0.bg-black');
+const closeButton = document.querySelector('.fixed.inset-0 button');
+menuButton.addEventListener('click', function() {
+mobileMenu.style.display = 'flex';
+});
+closeButton.addEventListener('click', function() {
+mobileMenu.style.display = 'none';
+});
+// Mobile menu links
+const mobileLinks = document.querySelectorAll('.fixed.inset-0 a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.style.display = 'none';
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Service request flow
+const requestServiceBtn = document.getElementById('requestServiceBtn');
+const serviceModal = document.getElementById('serviceModal');
+const formModal = document.getElementById('formModal');
+const closeServiceModal = document.getElementById('closeServiceModal');
+const closeFormModal = document.getElementById('closeFormModal');
+const serviceOptions = document.querySelectorAll('.service-option');
+const serviceRequestForm = document.getElementById('serviceRequestForm');
+const selectedServiceInput = document.getElementById('selectedService');
+requestServiceBtn.addEventListener('click', () => {
+serviceModal.classList.remove('hidden');
+});
+closeServiceModal.addEventListener('click', () => {
+serviceModal.classList.add('hidden');
+});
+closeFormModal.addEventListener('click', () => {
+formModal.classList.add('hidden');
+});
+serviceOptions.forEach(option => {
+option.addEventListener('click', () => {
+const service = option.getAttribute('data-service');
+selectedServiceInput.value = service;
+serviceModal.classList.add('hidden');
+formModal.classList.remove('hidden');
+});
+});
+serviceRequestForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('requestName').value;
+const email = document.getElementById('requestEmail').value;
+const service = selectedServiceInput.value;
+const message = document.getElementById('requestMessage').value;
+const whatsappMessage = `Olá! Meu nome é ${name}. Email: ${email}. Tenho interesse no serviço de ${service}. Mensagem: ${message}`;
+const whatsappUrl = `https://wa.me/244944230503?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappUrl, '_blank');
+formModal.classList.add('hidden');
+serviceRequestForm.reset();
+});
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const service = document.getElementById('service').value;
+const message = document.getElementById('message').value;
+// Format WhatsApp message
+const whatsappMessage = `Olá! Meu nome é ${name}. Email: ${email}. Tenho interesse no serviço de ${service}. Mensagem: ${message}`;
+const whatsappUrl = `https://wa.me/244944230503?text=${encodeURIComponent(whatsappMessage)}`;
+// Open WhatsApp
+window.open(whatsappUrl, '_blank');
+// Reset form
+contactForm.reset();
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Scroll animations
+const animateElements = document.querySelectorAll('.animate-fade-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, { threshold: 0.1 });
+animateElements.forEach(element => {
+element.style.opacity = '0';
+element.style.transform = 'translateY(20px)';
+element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+observer.observe(element);
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
